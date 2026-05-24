@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CineVerse – Nền tảng xem phim hoạt hình tu tiên cao cấp số 1 Việt Nam">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/CineVerse.css">
+    <link rel="icon" href="../images/layout/logo/book.png" type="image/png">
+    <title>LabThucHanh</title>
+    <style>
+        .lab-container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .lab-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lab-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--neon);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+        }
+
+        .lab-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-1);
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .lab-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            flex-grow: 1;
+        }
+
+        .lab-list li {
+            margin-bottom: 10px;
+        }
+
+        .lab-list a {
+            color: var(--text-2);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lab-list a:hover {
+            color: var(--neon);
+        }
+        /* 
+        .lab-list a::before {
+            content: '•';
+            color: var(--neon);
+        } */
+
+        .btn-view {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--neon), #00aaff);
+            color: #04070f;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-view:hover {
+            background: linear-gradient(135deg, #00aaff, var(--neon));
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+            color: #04070f;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-top: 120px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #fff, var(--neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+     <!-- === BACKGROUND PARTICLES === -->
+    <div class="bg-scene" aria-hidden="true">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+        <div class="particle p6"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-lines"></div>
+    </div>
+
+    <!-- ============================= -->
+    <!--           NAVBAR              -->
+    <!-- ============================= -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+
+            <!-- Logo -->
+            <a href="./index.html" class="logo" aria-label="CineVerse Home">
+                <span class="logo-gem">◈</span>
+                <span class="logo-text">Cine<em>Verse</em></span>
+            </a>
+
+            <!-- Hamburger -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="nav-links" id="navLinks" role="navigation">
+                <a href="./index.html" class="nav-link"><i class="fas fa-fire"></i><span>Hot</span></a>
+                <a href="#" class="nav-link"><i class="fas fa-calendar-alt"></i><span>Lịch Chiếu</span></a>
+                <a href="#" class="nav-link"><i class="fas fa-users"></i><span>Cộng Đồng</span></a>
+                <a href="#" class="nav-link"><i class="fas fa-check-circle"></i><span>Phim Hoàn Thành</span></a>
+                <a href="#" class="nav-link"><i class="fas fa-trophy"></i><span>BXH</span></a>
+                <a href="./LabThucHanh.html" class="nav-link active"><i class="fas fa-list"></i><span>Lab Thực Hành</span></a>
+            </div>
+
+            <!-- Nav Right -->
+            <div class="nav-right">
+                <div class="search-box" id="searchBox">
+                    <i class="fas fa-search search-ico"></i>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm phim, đạo hữu..."
+                        autocomplete="onl" aria-label="Tìm kiếm">
+                    <!-- <kbd class="search-kbd"><span>Ctrl</span><span>K</span></kbd> -->
+                </div>
+
+                <div class="icon-cluster">
+                    <button class="icon-btn" title="Cài đặt" aria-label="Cài đặt">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="icon-btn" title="Lịch sử xem" aria-label="Lịch sử xem">
+                        <i class="fas fa-history"></i>
+                    </button>
+                    <button class="icon-btn notif" title="Thông báo" aria-label="Thông báo">
+                        <i class="fas fa-bell"></i>
+                        <span class="notif-dot">3</span>
+                    </button>
+                </div>
+
+                <div class="user-avatar" title="Tài khoản">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-inner">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Danh Sách Lab Thực Hành</h1>
+        <p style="color: var(--text-2);">Tổng hợp các bài tập Nhập môn Web</p>
+    </header>
+
+    <div class="lab-container">
+        <!-- Lab 01 -->
+        <article class="lab-card">
+            <h3>Lab01: HTML</h3>
+            <ul class="lab-list">
+                <li><a href="/Nhap-Mon-Web/Lab01/lab1_bai3.html">Lab1_3</a></li>
+                <li><a href="/Nhap-Mon-Web/Lab01/lab1_bai4.html">Lab1_4</a></li>
+            </ul>
+            <a href="/Nhap-Mon-Web/Lab01/lab1_bai4.html" class="btn-view">Xem chi tiết</a>
+        </article>
+
+        <!-- Lab 02 -->
+        <article class="lab-card">
+            <h3>Lab02: Table & List</h3>
+            <ul class="lab-list">
+                <li><a href="/Nhap-Mon-Web/Lab02/lab2_bai1.html">Lab2_1</a></li>
+                <li><a href="/Nhap-Mon-Web/Lab02/lab2_bai2.html">Lab2_2</a></li>
+                <li><a href="/Nhap-Mon-Web/Lab02/lab2_bai3.html">Lab2_3</a></li>
+            </ul>
+            <a href="/Nhap-Mon-Web/Lab02/lab2_bai3.html" class="btn-view">Xem chi tiết</a>
+        </article>
+
+        <!-- Lab 03 -->
+        <article class="lab-card">
+            <h3>Lab03: Frame & Form</h3>
+            <ul class="lab-list">
+                <li><a href="/Nhap-Mon-Web/Lab03/Vi_du_Lab01/lab3_bai1.html">Lab3_1</a></li>
+                <li><a href="/Nhap-Mon-Web/Lab03/Vi_du_Lab01/lab3_bai2.html">Lab3_2</a></li>
+                <li><a href="/Nhap-Mon-Web/Lab03/Vi_du_Lab01/lab3_bai3.html">Lab3_3</a></li>
+            </ul>
+            <a href="/Nhap-Mon-Web/Lab03/Vi_du_Lab01/lab3_bai3.html" class="btn-view">Xem chi tiết</a>
+        </article>
+
+        <!-- Lab 04 -->
+        <article class="lab-card">
+            <h3>Lab04: CSS cơ bản</h3>
+            <ul class="lab-list">
+                <li><a href="#">Lab4_1</a></li>
+                <li><a href="#">Lab4_2</a></li>
+                <li><a href="#">Lab4_3</a></li>
+            </ul>
+            <a href="#" class="btn-view">Xem chi tiết</a>
+        </article>
+
+        <!-- Lab 05 -->
+        <article class="lab-card">
+            <h3>Lab05: Các thuộc tính CSS</h3>
+            <ul class="lab-list">
+                <li><a href="#">Lab5_1</a></li>
+                <li><a href="#">Lab5_2</a></li>
+                <li><a href="#">Lab5_3</a></li>
+                <li><a href="#">Lab5_4</a></li>
+            </ul>
+            <a href="#" class="btn-view">Xem chi tiết</a>
+        </article>
+
+        <!-- Lab 06 -->
+        <article class="lab-card">
+            <h3>Lab06: Xây dựng layout</h3>
+            <ul class="lab-list">
+                <li><a href="#">Lab6_1</a></li>
+                <li><a href="#">Lab6_2</a></li>
+                <li><a href="#">Lab6_3</a></li>
+            </ul>
+            <a href="#" class="btn-view">Xem chi tiết</a>
+        </article>
+
+        <!-- Lab 07 -->
+        <article class="lab-card">
+            <h3>Lab07: Javascript</h3>
+            <ul class="lab-list">
+                <li><a href="#">Lab7_1</a></li>
+                <li><a href="#">Lab7_2</a></li>
+            </ul>
+            <a href="#" class="btn-view">Xem chi tiết</a>
+        </article>
+
+        <!-- Lab 08 -->
+        <article class="lab-card">
+            <h3>Lab08: JS nâng cao</h3>
+            <ul class="lab-list">
+                <li><a href="#">Lab8_1</a></li>
+                <li><a href="#">Lab8_2</a></li>
+                <li><a href="#">Lab8_3 - Lab8_3_v2</a></li>
+            </ul>
+            <a href="#" class="btn-view">Xem chi tiết</a>
+        </article>
+    </div>
+
+    <script src="../script/CineVerse.js"></script>
+</body>
+</html>

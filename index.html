@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CineVerse – Nền tảng xem phim hoạt hình tu tiên cao cấp số 1 Việt Nam">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/CineVerse.css">
+    <link rel="icon" href="images/layout/logo/CineVerse.png">
+    <title>CineVerse</title>
+</head>
+
+<body>
+
+    <!-- === BACKGROUND PARTICLES === -->
+    <div class="bg-scene" aria-hidden="true">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+        <div class="particle p6"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-lines"></div>
+    </div>
+
+    <!-- ============================= -->
+    <!--           NAVBAR              -->
+    <!-- ============================= -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+
+            <!-- Logo -->
+            <a href="#" class="logo" aria-label="CineVerse Home">
+                <span class="logo-gem">◈</span>
+                <span class="logo-text">Cine<em>Verse</em></span>
+            </a>
+
+            <!-- Hamburger -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="nav-links" id="navLinks" role="navigation">
+                <a href="#" class="nav-link active"><i class="fas fa-fire"></i><span>Hot</span></a>
+                <a href="#" class="nav-link"><i class="fas fa-calendar-alt"></i><span>Lịch Chiếu</span></a>
+                <a href="#" class="nav-link"><i class="fas fa-users"></i><span>Cộng Đồng</span></a>
+                <a href="#" class="nav-link"><i class="fas fa-check-circle"></i><span>Phim Hoàn Thành</span></a>
+                <a href="#" class="nav-link"><i class="fas fa-trophy"></i><span>BXH</span></a>
+                <a href="/LabThucHanh.html" class="nav-link"><i class="fas fa-list"></i><span>Lab Thực Hành</span></a>
+            </div>
+
+            <!-- Nav Right -->
+            <div class="nav-right">
+                <div class="search-box" id="searchBox">
+                    <i class="fas fa-search search-ico"></i>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm phim, đạo hữu..."
+                        autocomplete="onl" aria-label="Tìm kiếm">
+                    <!-- <kbd class="search-kbd"><span>Ctrl</span><span>K</span></kbd> -->
+                </div>
+
+                <div class="icon-cluster">
+                    <button class="icon-btn" title="Cài đặt" aria-label="Cài đặt">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="icon-btn" title="Lịch sử xem" aria-label="Lịch sử xem">
+                        <i class="fas fa-history"></i>
+                    </button>
+                    <button class="icon-btn notif" title="Thông báo" aria-label="Thông báo">
+                        <i class="fas fa-bell"></i>
+                        <span class="notif-dot">3</span>
+                    </button>
+                </div>
+
+                <div class="user-avatar" title="Tài khoản">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-inner">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ============================= -->
+    <!--         TICKER BAR            -->
+    <!-- ============================= -->
+    <div class="ticker-bar" role="marquee" aria-label="Thông báo hệ thống">
+        <div class="ticker-label">
+            <i class="fas fa-satellite-dish"></i>
+            <span>LIVE</span>
+        </div>
+        <div class="ticker-runway">
+            <div class="ticker-track" id="tickerTrack">
+                <span class="t-item">✨ Hệ thống CineVerse đã nâng cấp server mới — tốc độ tải nhanh hơn 3x</span>
+                <span class="t-sep">◆</span>
+                <span class="t-item">🔥 Tập mới của <strong>Đấu Phá Thương Khung</strong> — Tập 141 vừa ra mắt hôm
+                    nay!</span>
+                <span class="t-sep">◆</span>
+                <span class="t-item">🎉 Sự kiện nhận VIP miễn phí đang diễn ra — Hạn chót 30/06/2026</span>
+                <span class="t-sep">◆</span>
+                <span class="t-item">⚡ <strong>Phàm Nhân Tu Tiên</strong> Season 4 sẽ ra mắt vào 25/05/2026 — Đừng bỏ
+                    lỡ!</span>
+                <span class="t-sep">◆</span>
+                <span class="t-item">🌟 Thêm hơn 500 bộ phim hoạt hình mới vào thư viện CineVerse tháng này</span>
+                <span class="t-sep">◆</span>
+                <span class="t-item">🏆 <strong>Thôn Phệ Tinh Không</strong> vượt mốc 3 triệu lượt xem — Kỷ lục
+                    mới!</span>
+                <span class="t-sep">◆</span>
+                <!-- Duplicate for seamless loop -->
+                <span class="t-item">✨ Hệ thống CineVerse đã nâng cấp server mới — tốc độ tải nhanh hơn 3x</span>
+                <span class="t-sep">◆</span>
+                <span class="t-item">🔥 Tập mới của <strong>Đấu Phá Thương Khung</strong> — Tập 141 vừa ra mắt hôm
+                    nay!</span>
+                <span class="t-sep">◆</span>
+                <span class="t-item">🎉 Sự kiện nhận VIP miễn phí đang diễn ra — Hạn chót 30/06/2026</span>
+                <span class="t-sep">◆</span>
+                <span class="t-item">⚡ <strong>Phàm Nhân Tu Tiên</strong> Season 4 sẽ ra mắt vào 25/05/2026 — Đừng bỏ
+                    lỡ!</span>
+                <span class="t-sep">◆</span>
+                <span class="t-item">🌟 Thêm hơn 500 bộ phim hoạt hình mới vào thư viện CineVerse tháng này</span>
+                <span class="t-sep">◆</span>
+                <span class="t-item">🏆 <strong>Thôn Phệ Tinh Không</strong> vượt mốc 3 triệu lượt xem — Kỷ lục
+                    mới!</span>
+                <span class="t-sep">◆</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================= -->
+    <!--         HERO SECTION          -->
+    <!-- ============================= -->
+    <section class="hero" id="hero">
+        <div class="hero-backdrop poster-dptk-hero"></div>
+        <div class="hero-vignette"></div>
+        <div class="hero-particles" aria-hidden="true">
+            <div class="spark s1"></div>
+            <div class="spark s2"></div>
+            <div class="spark s3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-tags">
+                <span class="htag htag-new">⚡ MỚI NHẤT</span>
+                <span class="htag htag-q">4K</span>
+                <span class="htag htag-ep">Tập 141</span>
+            </div>
+            <h1 class="hero-title">
+                Đấu Phá
+                <span class="hero-title-glow">Thương Khung</span>
+            </h1>
+            <p class="hero-sub">Battle Through the Heavens</p>
+            <p class="hero-desc">Câu chuyện về Tiêu Viêm, một thiên tài luyện đan bị mất đi năng lực, phải bắt đầu lại
+                từ đầu trên con đường trở thành Đấu Đế huyền thoại trong thế giới tu tiên đầy hiểm nguy và bí ẩn.</p>
+            <div class="hero-stats">
+                <div class="hstat"><i class="fas fa-eye"></i><span>2.5M lượt xem</span></div>
+                <div class="hstat"><i class="fas fa-star"></i><span>9.2 / 10</span></div>
+                <div class="hstat"><i class="fas fa-clock"></i><span>24 phút / tập</span></div>
+                <div class="hstat"><i class="fas fa-film"></i><span>280 tập</span></div>
+            </div>
+            <div class="hero-actions">
+                <button class="btn-play" aria-label="Xem Ngay">
+                    <i class="fas fa-play"></i>
+                    <span>Xem Ngay</span>
+                </button>
+                <button class="btn-add" aria-label="Thêm vào danh sách">
+                    <i class="fas fa-plus"></i>
+                    <span>Yêu Thích</span>
+                </button>
+                <button class="btn-trailer" aria-label="Xem Trailer">
+                    <i class="fas fa-film"></i>
+                    <span>Trailer</span>
+                </button>
+            </div>
+        </div>
+        <div class="hero-poster-preview">
+            <div class="poster-frame poster-dptk"></div>
+        </div>
+    </section>
+
+    <main class="main">
+
+        <!-- ============================= -->
+        <!--       TOP RANKING             -->
+        <!-- ============================= -->
+        <section class="section" id="ranking">
+            <div class="sec-header">
+                <div class="sec-title-group">
+                    <span class="sec-icon">🏆</span>
+                    <h2 class="sec-title">Bảng Xếp Hạng Tuần</h2>
+                    <span class="sec-subtitle">Top 7 phim được xem nhiều nhất</span>
+                </div>
+                <a href="#" class="view-all-btn">Xem tất cả <i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            <div class="ranking-scroll-outer">
+                <div class="ranking-track">
+
+                    <article class="rank-card rank-1" tabindex="0">
+                        <div class="rank-num">1</div>
+                        <div class="rank-poster-wrap">
+                            <div class="rp poster-dptk">
+                                <div class="rank-glow-ring"></div>
+                            </div>
+                        </div>
+                        <div class="rank-hover-overlay">
+                            <button class="rank-play-btn"><i class="fas fa-play"></i></button>
+                            <div class="rank-hover-info">
+                                <h3>Đấu Phá Thương Khung</h3>
+                                <p>Battle Through the Heavens</p>
+                                <span class="rb">Tập 280</span>
+                            </div>
+                        </div>
+                        <div class="rank-bottom">
+                            <h4 class="rank-title">Đấu Phá Thương Khung</h4>
+                            <div class="rank-meta"><span class="rb">Tập 280</span><span class="rv"><i
+                                        class="fas fa-eye"></i> 2.5M</span></div>
+                        </div>
+                        <div class="rank-crown">👑</div>
+                    </article>
+
+                    <article class="rank-card rank-2" tabindex="0">
+                        <div class="rank-num">2</div>
+                        <div class="rank-poster-wrap">
+                            <div class="rp poster-pntt"></div>
+                        </div>
+                        <div class="rank-hover-overlay">
+                            <button class="rank-play-btn"><i class="fas fa-play"></i></button>
+                            <div class="rank-hover-info">
+                                <h3>Phàm Nhân Tu Tiên</h3>
+                                <p>Mortal's Journey to Immortality</p>
+                                <span class="rb">Tập 86</span>
+                            </div>
+                        </div>
+                        <div class="rank-bottom">
+                            <h4 class="rank-title">Phàm Nhân Tu Tiên</h4>
+                            <div class="rank-meta"><span class="rb">Tập 86</span><span class="rv"><i
+                                        class="fas fa-eye"></i> 1.8M</span></div>
+                        </div>
+                    </article>
+
+                    <article class="rank-card rank-3" tabindex="0">
+                        <div class="rank-num">3</div>
+                        <div class="rank-poster-wrap">
+                            <div class="rp poster-tghm"></div>
+                        </div>
+                        <div class="rank-hover-overlay">
+                            <button class="rank-play-btn"><i class="fas fa-play"></i></button>
+                            <div class="rank-hover-info">
+                                <h3>Thế Giới Hoàn Mỹ</h3>
+                                <p>A Perfect World</p>
+                                <span class="rb rb-done">Hoàn Tất</span>
+                            </div>
+                        </div>
+                        <div class="rank-bottom">
+                            <h4 class="rank-title">Thế Giới Hoàn Mỹ</h4>
+                            <div class="rank-meta"><span class="rb rb-done">Hoàn Tất</span><span class="rv"><i
+                                        class="fas fa-eye"></i> 3.1M</span></div>
+                        </div>
+                    </article>
+
+                    <article class="rank-card" tabindex="0">
+                        <div class="rank-num">4</div>
+                        <div class="rank-poster-wrap">
+                            <div class="rp poster-tn"></div>
+                        </div>
+                        <div class="rank-hover-overlay">
+                            <button class="rank-play-btn"><i class="fas fa-play"></i></button>
+                            <div class="rank-hover-info">
+                                <h3>Tiên Nghịch</h3>
+                                <p>Renegade Immortal</p>
+                                <span class="rb">Tập 63</span>
+                            </div>
+                        </div>
+                        <div class="rank-bottom">
+                            <h4 class="rank-title">Tiên Nghịch</h4>
+                            <div class="rank-meta"><span class="rb">Tập 63</span><span class="rv"><i
+                                        class="fas fa-eye"></i> 956K</span></div>
+                        </div>
+                    </article>
+
+                    <article class="rank-card" tabindex="0">
+                        <div class="rank-num">5</div>
+                        <div class="rank-poster-wrap">
+                            <div class="rp poster-gt"></div>
+                        </div>
+                        <div class="rank-hover-overlay">
+                            <button class="rank-play-btn"><i class="fas fa-play"></i></button>
+                            <div class="rank-hover-info">
+                                <h3>Già Thiên</h3>
+                                <p>Shrouding the Heavens</p>
+                                <span class="rb">Tập 48</span>
+                            </div>
+                        </div>
+                        <div class="rank-bottom">
+                            <h4 class="rank-title">Già Thiên</h4>
+                            <div class="rank-meta"><span class="rb">Tập 48</span><span class="rv"><i
+                                        class="fas fa-eye"></i> 1.2M</span></div>
+                        </div>
+                    </article>
+
+                    <article class="rank-card" tabindex="0">
+                        <div class="rank-num">6</div>
+                        <div class="rank-poster-wrap">
+                            <div class="rp poster-tptk"></div>
+                        </div>
+                        <div class="rank-hover-overlay">
+                            <button class="rank-play-btn"><i class="fas fa-play"></i></button>
+                            <div class="rank-hover-info">
+                                <h3>Thôn Phệ Tinh Không</h3>
+                                <p>Swallowed Star</p>
+                                <span class="rb">Tập 163</span>
+                            </div>
+                        </div>
+                        <div class="rank-bottom">
+                            <h4 class="rank-title">Thôn Phệ Tinh Không</h4>
+                            <div class="rank-meta"><span class="rb">Tập 163</span><span class="rv"><i
+                                        class="fas fa-eye"></i> 2.9M</span></div>
+                        </div>
+                    </article>
+
+                    <article class="rank-card" tabindex="0">
+                        <div class="rank-num">7</div>
+                        <div class="rank-poster-wrap">
+                            <div class="rp poster-dldl"></div>
+                        </div>
+                        <div class="rank-hover-overlay">
+                            <button class="rank-play-btn"><i class="fas fa-play"></i></button>
+                            <div class="rank-hover-info">
+                                <h3>Đấu La Đại Lục</h3>
+                                <p>Soul Land</p>
+                                <span class="rb rb-done">Tập 153</span>
+                            </div>
+                        </div>
+                        <div class="rank-bottom">
+                            <h4 class="rank-title">Đấu La Đại Lục</h4>
+                            <div class="rank-meta"><span class="rb">Tập 153</span><span class="rv"><i
+                                        class="fas fa-eye"></i> 4.5M</span></div>
+                        </div>
+                    </article>
+
+                    <article class="rank-card" tabindex="0">
+                        <div class="rank-num">8</div>
+                        <div class="rank-poster-wrap">
+                            <div class="rp poster-td"></div>
+                        </div>
+                        <div class="rank-hover-overlay">
+                            <button class="rank-play-btn"><i class="fas fa-play"></i></button>
+                            <div class="rank-hover-info">
+                                <h3>Tương Dạ</h3>
+                                <p>Ever Nigh</p>
+                                <span class="rb">Tập 6</span>
+                            </div>
+                        </div>
+                        <div class="rank-bottom">
+                            <h4 class="rank-title">Tương Dạ</h4>
+                            <div class="rank-meta"><span class="rb">Tập 6</span><span class="rv"><i
+                                        class="fas fa-eye"></i> 5.0M</span></div>
+                        </div>
+                    </article>
+
+                    <article class="rank-card" tabindex="0">
+                        <div class="rank-num">9</div>
+                        <div class="rank-poster-wrap">
+                            <div class="rp poster-bl"></div>
+                        </div>
+                        <div class="rank-hover-overlay">
+                            <button class="rank-play-btn"><i class="fas fa-play"></i></button>
+                            <div class="rank-hover-info">
+                                <h3>Bàn Long</h3>
+                                <p>Coiling Dragon</p>
+                                <span class="rb rb-done">Tập 10</span>
+                            </div>
+                        </div>
+                        <div class="rank-bottom">
+                            <h4 class="rank-title">Bàn Long</h4>
+                            <div class="rank-meta"><span class="rb">Tập 10</span><span class="rv"><i
+                                        class="fas fa-eye"></i> 3.2MM</span></div>
+                        </div>
+                    </article>
+
+                    <article class="rank-card" tabindex="0">
+                        <div class="rank-num">10</div>
+                        <div class="rank-poster-wrap">
+                            <div class="rp poster-qacn"></div>
+                        </div>
+                        <div class="rank-hover-overlay">
+                            <button class="rank-play-btn"><i class="fas fa-play"></i></button>
+                            <div class="rank-hover-info">
+                                <h3>Quang Âm Chi Ngoại</h3>
+                                <p>Beyond Time's Gaze</p>
+                                <span class="rb">Hoàn Tất</span>
+                            </div>
+                        </div>
+                        <div class="rank-bottom">
+                            <h4 class="rank-title">Quang Âm Chi Ngoại</h4>
+                            <div class="rank-meta"><span class="rb">Hoàn Tất</span><span class="rv"><i
+                                        class="fas fa-eye"></i> 4.5M</span></div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================= -->
+        <!--         DAY TABS              -->
+        <!-- ============================= -->
+        <section class="section" id="schedule">
+            <div class="sec-header">
+                <div class="sec-title-group">
+                    <span class="sec-icon">📅</span>
+                    <h2 class="sec-title">Lịch Chiếu</h2>
+                    <span class="sec-subtitle">Cập nhật mỗi ngày</span>
+                </div>
+            </div>
+
+            <div class="day-tabs" role="tablist" aria-label="Lịch chiếu theo ngày">
+                <button class="dtab" data-tab="new" role="tab" aria-selected="false">Mới Cập Nhật</button>
+                <button class="dtab" data-tab="mon" role="tab" aria-selected="false">Thứ Hai</button>
+                <button class="dtab active" data-tab="tue" role="tab" aria-selected="true">
+                    <span class="today-pin">HÔM NAY</span>
+                    Thứ Ba
+                </button>
+                <button class="dtab" data-tab="wed" role="tab" aria-selected="false">Thứ Tư</button>
+                <button class="dtab" data-tab="thu" role="tab" aria-selected="false">Thứ Năm</button>
+                <button class="dtab" data-tab="fri" role="tab" aria-selected="false">Thứ Sáu</button>
+                <button class="dtab" data-tab="sat" role="tab" aria-selected="false">Thứ Bảy</button>
+                <button class="dtab" data-tab="sun" role="tab" aria-selected="false">Chủ Nhật</button>
+            </div>
+
+            <!-- Schedule List -->
+
+            <!-- Đấu phá thương khung -->
+            <div class="schedule-list" id="scheduleList" role="tabpanel">
+                <div class="sch-item">
+                    <div class="sch-time"><span>08:00</span>
+                        <div class="sch-dot"></div>
+                    </div>
+                    <div class="sch-poster poster-dptk-sm"></div>
+                    <div class="sch-info">
+                        <h4>Đấu Phá Thương Khung</h4>
+                        <p>Tập 280 — Mới nhất hôm nay</p>
+                        <div class="sch-tags"><span class="stag stag-hot">HOT</span><span class="stag stag-4k">4K</span>
+                        </div>
+                    </div>
+                    <div class="sch-views"><i class="fas fa-eye"></i> 2.5M</div>
+                </div>
+                <!-- Phàm Nhân Tu Tiên -->
+                <div class="sch-item">
+                    <div class="sch-time"><span>10:30</span>
+                        <div class="sch-dot"></div>
+                    </div>
+                    <div class="sch-poster poster-pntt-sm"></div>
+                    <div class="sch-info">
+                        <h4>Phàm Nhân Tu Tiên</h4>
+                        <p>Tập 86 — Season 4 mới</p>
+                        <div class="sch-tags"><span class="stag stag-new">MỚI</span><span
+                                class="stag stag-fhd">FullHD</span></div>
+                    </div>
+                    <div class="sch-views"><i class="fas fa-eye"></i> 1.8M</div>
+                </div>
+                <!-- Tiên Nghịch -->
+                <div class="sch-item">
+                    <div class="sch-time"><span>14:00</span>
+                        <div class="sch-dot"></div>
+                    </div>
+                    <div class="sch-poster poster-tn-sm"></div>
+                    <div class="sch-info">
+                        <h4>Tiên Nghịch</h4>
+                        <p>Tập 63 — Đang chiếu</p>
+                        <div class="sch-tags"><span class="stag stag-4k">4K</span></div>
+                    </div>
+                    <div class="sch-views"><i class="fas fa-eye"></i> 956K</div>
+                </div>
+                <!-- Già Thiên -->
+                <div class="sch-item">
+                    <div class="sch-time"><span>16:30</span>
+                        <div class="sch-dot"></div>
+                    </div>
+                    <div class="sch-poster poster-gt-sm"></div>
+                    <div class="sch-info">
+                        <h4>Già Thiên</h4>
+                        <p>Tập 48 — Tiếp tục hành trình</p>
+                        <div class="sch-tags"><span class="stag stag-fhd">FullHD</span></div>
+                    </div>
+                    <div class="sch-views"><i class="fas fa-eye"></i> 1.2M</div>
+                </div>
+                <!-- Thôn Phệ Tinh Không -->
+                <div class="sch-item">
+                    <div class="sch-time"><span>20:00</span>
+                        <div class="sch-dot sch-dot-prime"></div>
+                    </div>
+                    <div class="sch-poster poster-tptk-sm"></div>
+                    <div class="sch-info">
+                        <h4>Thôn Phệ Tinh Không</h4>
+                        <p>Tập 163 — Khung giờ vàng</p>
+                        <div class="sch-tags"><span class="stag stag-hot">HOT</span><span class="stag stag-4k">4K</span>
+                        </div>
+                    </div>
+                    <div class="sch-views"><i class="fas fa-eye"></i> 2.9M</div>
+                </div>
+                <!-- Thần Mộ -->
+                <div class="sch-item">
+                    <div class="sch-time"><span>23:35</span>
+                        <div class="sch-dot"></div>
+                    </div>
+                    <div class="sch-poster poster-tm-sm"></div>
+                    <div class="sch-info">
+                        <h4>Thần Mộ</h4>
+                        <p>Tập Đặc Biệt — Phiên bản mở rộng</p>
+                        <div class="sch-tags"><span class="stag stag-new">MỚI</span></div>
+                    </div>
+                    <div class="sch-views"><i class="fas fa-eye"></i> 445K</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================= -->
+        <!--         MOVIE GRID            -->
+        <!-- ============================= -->
+        <section class="section" id="movies">
+            <div class="sec-header">
+                <div class="sec-title-group">
+                    <span class="sec-icon">🎬</span>
+                    <h2 class="sec-title">Phim Đề Xuất</h2>
+                </div>
+                <div class="filter-group" role="group" aria-label="Lọc phim">
+                    <button class="fbtn active">Tất Cả</button>
+                    <button class="fbtn">Mới Nhất</button>
+                    <button class="fbtn">HOT</button>
+                    <button class="fbtn">Hoàn Tất</button>
+                </div>
+                <a href="#" class="view-all-btn">Xem tất cả <i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            <div class="movie-grid" id="movieGrid">
+
+                <!-- Card 1: Đấu Phá Thương Khung -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-dptk">
+                        <div class="mc-top-badges">
+                            <span class="qbadge q4k">4K</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge">Tập 280</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Đấu Phá Thương Khung</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 2.5M</span>
+                            <span class="sbadge sb-hot">HOT</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Phàm Nhân Tu Tiên -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-pntt">
+                        <div class="mc-top-badges">
+                            <span class="qbadge qfhd">FullHD</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge">Tập 86</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Phàm Nhân Tu Tiên</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 1.8M</span>
+                            <span class="sbadge sb-new">MỚI</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: Thế Giới Hoàn Mỹ -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-tghm">
+                        <div class="mc-top-badges">
+                            <span class="qbadge q4k">4K</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge ep-done">Tập 648</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Thế Giới Hoàn Mỹ</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 3.1M</span>
+                            <span class="sbadge sb-done">HOÀN TẤT</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4: Tiên Nghịch -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-tn">
+                        <div class="mc-top-badges">
+                            <span class="qbadge qhd">HD</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge">Tập 63</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Tiên Nghịch</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 956K</span>
+                            <span class="sbadge sb-hot">HOT</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5: Già Thiên -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-gt">
+                        <div class="mc-top-badges">
+                            <span class="qbadge qfhd">FullHD</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge">Tập 48</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Già Thiên</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 1.2M</span>
+                            <span class="sbadge sb-new">MỚI</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6: Thôn Phệ Tinh Không -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-tptk">
+                        <div class="mc-top-badges">
+                            <span class="qbadge q4k">4K</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge">Tập 163</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Thôn Phệ Tinh Không</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 2.9M</span>
+                            <span class="sbadge sb-hot">HOT</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 7: Đấu La Đại Lục -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-dldl">
+                        <div class="mc-top-badges">
+                            <span class="qbadge qfhd">FullHD</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge">Tập 153</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Đấu La Đại Lục</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 4.5M</span>
+                            <span class="sbadge sb-hot">HOT</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 8: Tương Dạ -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-td">
+                        <div class="mc-top-badges">
+                            <span class="qbadge q4k">4K</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge">Tập 6</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Tương Dạ</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 5.0M</span>
+                            <span class="sbadge sb-hot">HOT</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 9: Bàn Long -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-bl">
+                        <div class="mc-top-badges">
+                            <span class="qbadge qhd">HD</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge ">Tập 10</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Bàn Long</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 3.2M</span>
+                            <span class="sbadge sb-hot">HOT</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 10: Quang Âm Chi Ngoại -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-qacn">
+                        <div class="mc-top-badges">
+                            <span class="qbadge q4k">4K</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge">Hoàn Tất</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Quang Âm Chi Ngoại</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 4.5M</span>
+                            <span class="sbadge sb-done">HOÀN TẤT</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 11: Tinh Thần biến -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-ttb">
+                        <div class="mc-top-badges">
+                            <span class="qbadge qfhd">FullHD</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge">Tập 112</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Tinh Thần biến</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 632K</span>
+                            <span class="sbadge sb-new">MỚI</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 12: Mục Thần Ký -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-mtk">
+                        <div class="mc-top-badges">
+                            <span class="qbadge q4k">4K</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge ep-done">Tập 513</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Mục Thần Ký</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 10.5M</span>
+                            <span class="sbadge sb-done">HOÀN TẤT</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 13: Thần Mộ-->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-tm">
+                        <div class="mc-top-badges">
+                            <span class="qbadge qfhd">FullHD</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge">Tập 86</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Thần Mộ</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 445K</span>
+                            <span class="sbadge sb-new">MỚI</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 14: Sưu Thần Ký -->
+                <article class="movie-card" tabindex="0">
+                    <div class="mc-poster poster-stk">
+                        <div class="mc-top-badges">
+                            <span class="qbadge qhd">HD</span>
+                        </div>
+                        <div class="mc-bot-badges">
+                            <span class="epbadge">Tập 11</span>
+                        </div>
+                        <div class="mc-overlay">
+                            <button class="mc-watch"><i class="fas fa-play"></i> Xem Ngay</button>
+                        </div>
+                    </div>
+                    <div class="mc-info">
+                        <h3 class="mc-title">Sưu Thần Ký</h3>
+                        <div class="mc-meta">
+                            <span class="mc-views"><i class="fas fa-eye"></i> 938K</span>
+                            <span class="sbadge sb-new">MỚI</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div><!-- /movie-grid -->
+        </section>
+
+    </main>
+
+    <!-- ============================= -->
+    <!--           FOOTER              -->
+    <!-- ============================= -->
+    <footer class="footer">
+        <div class="footer-aurora" aria-hidden="true"></div>
+        <div class="footer-inner">
+
+            <div class="footer-grid">
+
+                <!-- Col 1: Brand -->
+                <div class="fcol fcol-brand">
+                    <a href="#" class="footer-logo" aria-label="CineVerse">
+                        <span class="logo-gem">◈</span>
+                        <span>Cine<em>Verse</em></span>
+                    </a>
+                    <p class="footer-tagline">
+                        Xem hoạt hình 3D Vietsub, Thuyết minh nhanh nhất, chất lượng cao. Nơi hội tụ các đạo hữu đam mê Tu Tiên.
+                    </p>
+                    <div class="social-row">
+                        <a href="#" class="soc-ico" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="soc-ico" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="soc-ico" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="soc-ico" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="soc-ico" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Categories -->
+                <div class="fcol">
+                    <h4 class="fcol-title">Danh Mục</h4>
+                    <ul class="flinks">
+                        <li><a href="#">Phim Mới</a></li>
+                        <li><a href="#">Bảng Xếp Hạng</a></li>
+                        <li><a href="#">Lịch Chiếu</a></li>
+                        <li><a href="#">Phim Hoàn Tất</a></li>
+                        <li><a href="#">Anime Hot</a></li>
+                        <li><a href="#">Thể Loại</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Policy -->
+                <div class="fcol">
+                    <h4 class="fcol-title">Chính Sách</h4>
+                    <ul class="flinks">
+                        <li><a href="#">Điều Khoản Sử Dụng</a></li>
+                        <li><a href="#">Chính Sách Bảo Mật</a></li>
+                        <li><a href="#">Chính Sách Cookie</a></li>
+                        <li><a href="#">Hỗ Trợ</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: App Download -->
+                <div class="fcol fcol-app">
+                    <h4 class="fcol-title">Tải Ứng Dụng</h4>
+                    <p class="fcol-desc">Trải nghiệm CineVerse mọi lúc mọi nơi trên thiết bị di động của bạn.</p>
+                    <a href="#" class="app-dl-btn">
+                        <i class="fab fa-google-play"></i>
+                        <div class="app-dl-text">
+                            <small>Tải trên</small>
+                            <strong>Google Play</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="app-dl-btn app-dl-ios">
+                        <i class="fab fa-apple"></i>
+                        <div class="app-dl-text">
+                            <small>Tải trên</small>
+                            <strong>App Store</strong>
+                        </div>
+                    </a>
+                </div>
+
+            </div><!-- /footer-grid -->
+
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 <strong>CineVerse</strong>. All rights reserved. Made with <span
+                        class="heart-ico">♥</span> for all anime lovers.</p>
+                <div class="footer-bot-links">
+                    <a href="#">Điều Khoản</a>
+                    <span>·</span>
+                    <a href="#">Bảo Mật</a>
+                    <span>·</span>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <button class="scroll-top" id="scrollTop" aria-label="Về đầu trang" title="Về đầu trang">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script/CineVerse.js"></script>
+</body>
+
+</html>
